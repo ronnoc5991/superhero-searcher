@@ -51,9 +51,20 @@ table {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  display: flex;
+}
+
+.home {
+	border: 1px solid orange;
+	width: 50%;
+	margin: auto;
+}
+
+.hero-container {
+	border: 1px solid blue;
 }
 
 p {
-  font-size: 24px;
-  color: #39ff14;
-}
+	font-size: 24px;
+	color: #39ff14;
+  }
