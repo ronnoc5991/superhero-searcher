@@ -4,13 +4,14 @@ import Hero from './Hero';
 
 function Home() {
 
-    useEffect(() => {
-        getSuperhero(currentHero);
-    }, [])
-
     const [currentHero, setCurrentHero] = useState('bruce wayne')
     const [heroData, setHeroData] = useState({})
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
+    const [search, setSearch] = useState('');
+
+    useEffect(() => {
+        getSuperhero(currentHero);
+    }, [currentHero])
 
     const getSuperhero = (superhero) => {
         setIsLoading(true);
@@ -26,12 +27,35 @@ function Home() {
             .then(setIsLoading(false));
     }
 
+    function handleSearch (e) {
+        setSearch(e.target.value);
+    }
+
+    function handleSubmit (e) {
+        e.preventDefault();
+        setCurrentHero(search);
+        setSearch('')
+    }
+
 
   return (
     <div className="home">
+        <form>
+            <label>
+                <input type="text" value={ search } onChange={ handleSearch } />
+            </label>
+            <button onClick={ handleSubmit } >
+                Submit
+            </button>
+        </form>
         { isLoading ? <div>Loading</div> : <Hero hero={ heroData } /> }
     </div>
   );
 }
 
 export default Home;
+
+// create a database that looks like a terminal from out of a nineties movie
+// home screen starts with no hero displayed and a form and other dummy information
+// upon searching... the information loads
+// blinking cursor in the search bar like in a terminal
