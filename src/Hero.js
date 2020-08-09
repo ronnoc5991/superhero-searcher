@@ -1,29 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Hero (props) {
 
+    var IMAGE_STYLES = {};
+
     if (props.hero.name) {
         console.log(props.hero);
+        IMAGE_STYLES = {
+            backgroundImage: `url(${props.hero.images.md})`,
+        }
     }
 
     return (
         <div className="hero-container" >
             { props.hero.name ? 
                 <>
-                    <p> { props.hero.name } </p>
-                    <div className="appearance">
-                        <p> Gender: { props.hero.appearance.gender } </p>
-                        <p> Eye Color: { props.hero.appearance.eyeColor } </p>
-                        <p> Hair Color: { props.hero.appearance.hairColor } </p>
-                        <p> Height: { props.hero.appearance.height[1] } </p>
-                        <p> Race: { props.hero.appearance.race } </p>
-                        <p> Weight: { props.hero.appearance.weight[1] }</p>
+                <div className="image-container">
+                    <div className="filter"></div>
+                    <div className="hero-image" style={IMAGE_STYLES}></div>
+                </div>
+                    <div className="hero-information">
+                            <p> Known As: { props.hero.name } </p>
+                            <p> Full Name: { props.hero.biography.fullName } </p>
+                            <p> Gender: { props.hero.appearance.gender } </p>
+                            <p> Eye Color: { props.hero.appearance.eyeColor } </p>
+                            <p> Hair Color: { props.hero.appearance.hairColor } </p>
+                            <p> Height: { props.hero.appearance.height[1] } </p>
+                            <p> Race: { props.hero.appearance.race } </p>
+                            <p> Weight: { props.hero.appearance.weight[1] }</p>
+                            <p> Place of Birth: { props.hero.biography.placeOfBirth } </p>
                     </div>
-                    <div className="biography">
-                        <p> { props.hero.biography.fullName } </p>
-                        <p> { props.hero.biography.placeOfBirth } </p>
-                    </div>
-                    <img src={ props.hero.images.sm } alt=""/>
                 </>
                 :
                 ''

@@ -56,12 +56,50 @@ table {
 
 .home {
 	border: 1px solid orange;
-	width: 50%;
+	width: 50vw;
+	/* height: 50vh; */
 	margin: auto;
 }
 
 .hero-container {
 	border: 1px solid blue;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	height: 50vh;
+}
+
+.image-container {
+	grid-column: 1 / 2;
+	height: 50vh;
+	position: relative;
+}
+
+.hero-image{
+	height: 50vh;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	filter: grayscale(100%) contrast(110%) sepia(200%) hue-rotate(90deg);
+	z-index: -5;
+}
+
+.filter {
+	background-color: rgba(57, 255, 20, .4);
+	height: 50vh;
+	width: 100%;
+	z-index: 2;
+	position: absolute;
+}
+
+.hero-information {
+	grid-column: 2 / 3;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding-left: 20px;
 }
 
 p {
