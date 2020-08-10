@@ -56,6 +56,16 @@ table {
 	grid-template-rows: 1fr 50vh 1fr;
 	font-size: 24px;
 	color: #39ff14;
+	pointer-events: none;
+}
+
+.screen {
+	position: absolute;
+	background-color: rgba(57, 255, 20, .1);
+	height: 100vh;
+	width: 100vw;
+	pointer-events: none;
+	z-index: 5;
 }
 
 .top-left {
@@ -74,16 +84,29 @@ table {
 	grid-column: 3 / 4;
 }
 
-.middle-left {
+.thumb-container {
 	grid-row: 2 / 3;
 	grid-column: 1 / 2;
+}
+
+.thumb-1 {
+	height: 100%;
 	display: flex;
 }
 
-.middle-left svg {
+.thumb-1 svg {
 	height: 50%;
 	width: 50%;
 	margin: auto;
+}
+
+.thumb-2 {
+	width: 100%;
+	height: 100%;
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	filter: invert(84%) sepia(44%) saturate(4065%) hue-rotate(58deg) brightness(100%) contrast(118%);
 }
 
 .hero-container {
@@ -119,27 +142,40 @@ table {
 	position: absolute;
 }
 
+.insert-1 {
+	width: 100%;
+	height: 20px;
+	border-top: 5px solid #39ff14;
+	border-left: 5px solid #39ff14;
+	border-right: 5px solid #39ff14;
+}
+
+.insert-2 {
+	width: 100%;
+	height: 20px;
+	border-left: 5px solid #39ff14;
+	border-right: 5px solid #39ff14;
+	border-bottom: 5px solid #39ff14;
+}
+
 .hero-information {
 	grid-column: 2 / 3;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: flex-start;
+	padding-left: 20px;
+	text-align: left;
+}
+
+.hero-information p {
 	padding-left: 20px;
 }
 
 .middle-right {
 	grid-row: 2 / 3;
 	grid-column: 3 / 4;
-	display: flex;
-	background-color: blue;
-}
-
-.middle-right img {
-	height: 50%;
-	width: 50%;
-	margin: auto;
 }
 
 .bottom-left {
@@ -160,9 +196,62 @@ table {
 .search-bar {
 	margin: auto;
 	width: 80%;
+	height: 40px;
+	border: 5px solid #39ff14;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.search-bar span {
+	margin: auto 0;
+	display: flex;
+	/* border: 1px solid orange; */
+	justify-content: center;
+	min-width: 10px;
+}
+
+.search-bar button {
+	display: none;
 }
 
 .search-bar input {
-	width: 100%;
-	height: 40px;
+	min-width: 10px;
+	width: 1px;
+	height: 1px;
+	background-color: black;
+	color: black;
+	font-family: 'VT323', monospace;
+	font-size: 24px;
+	text-align: end;
+	caret-color: black;
+	display: hidden;
+	box-shadow: none;
+	outline: none;
+	border: none;
+}
+
+.search-bar input:focus {
+	outline: none;
+	border: none;
+	box-shadow: none;
+	display: hidden;
+}
+
+.caret {
+	height: 24px;
+	width: 10px;
+	background-color: #39ff14;
+	margin: auto 0;
+	animation-name: blink;
+	animation-duration: 1000ms;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+	0% { background-color: #39ff14; }
+	49% { background-color: #39ff14; }
+	50% { background-color: black; }
+	100% { background-color: black; }
 }

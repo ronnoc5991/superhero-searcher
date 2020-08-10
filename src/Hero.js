@@ -5,7 +5,6 @@ function Hero (props) {
     var IMAGE_STYLES = {};
 
     if (props.hero.name) {
-        console.log(props.hero);
         IMAGE_STYLES = {
             backgroundImage: `url(${props.hero.images.md})`,
         }
@@ -20,6 +19,7 @@ function Hero (props) {
                     <div className="hero-image" style={IMAGE_STYLES}></div>
                 </div>
                     <div className="hero-information">
+                        <div className="insert-1" ></div>
                             <p> Known As: { props.hero.name } </p>
                             <p> Full Name: { props.hero.biography.fullName } </p>
                             <p> Gender: { props.hero.appearance.gender } </p>
@@ -29,6 +29,7 @@ function Hero (props) {
                             <p> Race: { props.hero.appearance.race } </p>
                             <p> Weight: { props.hero.appearance.weight[1] }</p>
                             <p> Place of Birth: { props.hero.biography.placeOfBirth } </p>
+                        <div className="insert-2" ></div>
                     </div>
                 </>
                 :

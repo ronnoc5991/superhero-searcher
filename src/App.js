@@ -9,9 +9,11 @@ function App() {
   const [heroData, setHeroData] = useState({})
   const [isLoading, setIsLoading] = useState(false)
   const [search, setSearch] = useState('');
+  const [thumb, setThumb] = useState(true);
 
   useEffect(() => {
       getSuperhero(currentHero);
+      setThumb(!thumb);
   }, [currentHero])
 
   const getSuperhero = (superhero) => {
@@ -38,28 +40,39 @@ function App() {
       setSearch('')
   }
 
+  const input = document.querySelectorAll("#input")[0];
+
+  function handleBlur () {
+    input.focus();
+  }
+
+  var BACKGROUND_IMAGE = {
+    backgroundImage: `url(./photos/fingerprint2.png)`,
+}
+
 
 return (
   <div className="App">
+    <div className="screen"></div>
     <div className="top-left"></div>
     <div className="top-middle">
-    <form className="search-bar">
-
-              <input type="text" value={ search } onChange={ handleSearch } />
-          
-          <button onClick={ handleSubmit } >
-              Submit
-          </button>
+      <form className="search-bar">
+        <input type="text" value={ search } onChange={ handleSearch } autoFocus onBlur={ handleBlur } id="input" autoComplete="off" />
+        <span>{ search }</span>
+        <div className="caret"></div>
+            
+        <button onClick={ handleSubmit } >
+          Submit
+        </button>
       </form>
     </div>
     <div className="top-right"></div>
-    <div className="middle-left">
-      <Fingerprint />
+    <div className="thumb-container" >
+      { thumb ? <div className="thumb-1"><Fingerprint /></div> : <div className="thumb-2" style={ BACKGROUND_IMAGE }></div> }
     </div>
+    {/* <div className="thumb-1"><Fingerprint /></div> */}
       { isLoading ? <div>Loading</div> : <Hero hero={ heroData } /> }
-      <div className="middle-right">
-        <img src="./photos/fingerprint2.png" alt=""/>
-      </div>
+      {/* <div className="thumb-2" style={ BACKGROUND_IMAGE }></div> */}
       <div className="bottom-left"></div>
       <div className="bottom-middle"></div>
       <div className="bottom-right"></div>
