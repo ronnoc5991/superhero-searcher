@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/superhero-searcher/static/css/main.f89950a2.chunk.css",
+    "main.js": "/superhero-searcher/static/js/main.4a3b2430.chunk.js",
+    "main.js.map": "/superhero-searcher/static/js/main.4a3b2430.chunk.js.map",
+    "runtime-main.js": "/superhero-searcher/static/js/runtime-main.84b295bd.js",
+    "runtime-main.js.map": "/superhero-searcher/static/js/runtime-main.84b295bd.js.map",
+    "static/js/2.56a67395.chunk.js": "/superhero-searcher/static/js/2.56a67395.chunk.js",
+    "static/js/2.56a67395.chunk.js.map": "/superhero-searcher/static/js/2.56a67395.chunk.js.map",
+    "index.html": "/superhero-searcher/index.html",
+    "precache-manifest.22727d8c6afe99ee0dbbcf1d55294c28.js": "/superhero-searcher/precache-manifest.22727d8c6afe99ee0dbbcf1d55294c28.js",
+    "service-worker.js": "/superhero-searcher/service-worker.js",
+    "static/css/main.f89950a2.chunk.css.map": "/superhero-searcher/static/css/main.f89950a2.chunk.css.map",
+    "static/js/2.56a67395.chunk.js.LICENSE.txt": "/superhero-searcher/static/js/2.56a67395.chunk.js.LICENSE.txt",
+    "static/media/fingerprint3.a5f92e59.svg": "/superhero-searcher/static/media/fingerprint3.a5f92e59.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84b295bd.js",
+    "static/js/2.56a67395.chunk.js",
+    "static/css/main.f89950a2.chunk.css",
+    "static/js/main.4a3b2430.chunk.js"
+  ]
+}
