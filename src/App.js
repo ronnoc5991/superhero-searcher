@@ -54,7 +54,11 @@ function App() {
 
 return (
   <div className="App">
-    <div className="screen"></div>
+    <div className="screen">
+      <div className="screen-wiper wiper-1"></div>
+      <div className="screen-wiper wiper-2"></div>
+      <div className="screen-wiper wiper-3"></div>
+    </div>
     <div className="top-left"></div>
     <div className="top-middle">
       <form className="search-bar">
@@ -73,7 +77,7 @@ return (
     </div>
       { isLoading ? <div>Loading</div> : <Hero hero={ heroData } /> }
       <div className="middle-right">
-        <Globe />
+        {/* <Globe /> */}
       </div>
       <div className="bottom-left"></div>
       <div className="bottom-middle"></div>

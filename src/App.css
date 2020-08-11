@@ -66,6 +66,38 @@ table {
 	width: 100vw;
 	pointer-events: none;
 	z-index: 5;
+	overflow: hidden;
+}
+
+.screen-wiper {
+	position: absolute;
+	background-color: rgba(57, 255, 20, .1);
+	width: 100%;
+}
+
+.wiper-1 {
+	height: 30vh;
+	animation: wipe 3s linear infinite;
+}
+
+.wiper-2 {
+	animation: wipe 3s linear infinite;
+
+}
+
+.wiper-3 {
+	height: 1vh;
+	animation: wipe 2s linear infinite;
+}
+
+@keyframes wipe {
+	0%{
+		top: -100%;
+	}
+
+	100% {
+		top: 100vh;
+	}
 }
 
 .top-left {
