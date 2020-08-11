@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Hero from './Hero'
+import Globe from './Globe'
 import {ReactComponent as Fingerprint} from './fingerprint3.svg'
 
 function App() {
@@ -70,9 +71,10 @@ return (
     <div className="thumb-container" >
       { thumb ? <div className="thumb-1"><Fingerprint /></div> : <div className="thumb-2" style={ BACKGROUND_IMAGE }></div> }
     </div>
-    {/* <div className="thumb-1"><Fingerprint /></div> */}
       { isLoading ? <div>Loading</div> : <Hero hero={ heroData } /> }
-      {/* <div className="thumb-2" style={ BACKGROUND_IMAGE }></div> */}
+      <div className="middle-right">
+        <Globe />
+      </div>
       <div className="bottom-left"></div>
       <div className="bottom-middle"></div>
       <div className="bottom-right"></div>

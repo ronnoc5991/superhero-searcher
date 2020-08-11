@@ -176,6 +176,12 @@ table {
 .middle-right {
 	grid-row: 2 / 3;
 	grid-column: 3 / 4;
+	position: relative;
+	display: flex;
+}
+
+.globe {
+	margin: auto;
 }
 
 .bottom-left {
@@ -255,3 +261,4 @@ table {
 	50% { background-color: black; }
 	100% { background-color: black; }
 }
+
